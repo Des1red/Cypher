@@ -21,15 +21,12 @@ Cypher is an indispensable tool for security professionals seeking to bolster th
 To install Cypher, clone the repository to your local machine:
 https://github.com/Des1red/CypherVamp.git
 
-Move from the program root directory to the installers : cd scripts
+Give permissions to installer : chmod +x installer.sh
 
-Give permissions to installer if not given: chmod +x setup-"YourOs".sh
+Run the installer : sudo ./installer.sh
 
-Run the installer : ./setup-"YourOs".sh
-
-After the tools needed are installed , cypher command should be available
-
-Run the command : cypher 
+After the tools needed are installed , an excutable go file should be made 
+Run the excutable file : sudo ./cypher -h
 
 ## Usage
 
@@ -38,18 +35,17 @@ Cypher supports the following command-line options:
 -h, --help: Display the usage instructions.
 
 -v: Start Cypher scanner for a specific URL/IP.
-  -v ip 8.8.8.8 : Performs only an Ip scan.
-  -v url www.example.com : Performs only a URL scan.
+
 -f, --file: Run Cypher with your own file containing targets.
 
 -nS, --net-scan: Scan the local network for targets.
 
--wm: Enter network monitor mode and capture wpa, wpa2 key.
+-wm: Enter network monitor mode.
 
   ## Aggresive Scan Option :   
   
   - **Port Specification**: 
-  - The user is prompted to specify ports needed to be scanned. If no input is provided, the default maximum port number is set to 10,000.
+  - The user is prompted to specify the port number to be scanned. If no input is provided, the default maximum port number is set to 10,000.
     
   - This allows customization of the port range to be scanned based on user input.
    
