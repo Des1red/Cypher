@@ -19,7 +19,7 @@ Cypher is an indispensable tool for security professionals seeking to bolster th
 
 ## Installation
 To install Cypher, clone the repository to your local machine:
-https://github.com/Des1red/CypherVamp.git
+https://github.com/Des1red/Cypher.git
 
 Give permissions to installer : chmod +x installer.sh
 
