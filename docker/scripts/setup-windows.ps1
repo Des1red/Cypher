@@ -30,7 +30,7 @@ function cypher {
     # Join the arguments into a single string separated by spaces
     `$argsString = `$args -join ' '
     # Pass the joined string to Docker
-    docker run -it --rm --network host --cap-add NET_ADMIN --cap-add NET_RAW cypher $argsString
+    docker run -it --rm --network host --cap-add NET_ADMIN --cap-add NET_RAW cypher `$argsString
 }
 "@
 
