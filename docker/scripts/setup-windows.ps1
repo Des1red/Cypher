@@ -9,6 +9,12 @@ $configFile = $PROFILE
 
 Write-Host "Configuration file set to ${configFile}"
 
+# Create the profile file if it doesn't exist
+if (-not (Test-Path -Path $configFile)) {
+    New-Item -ItemType File -Path $configFile -Force
+    Write-Host "Created profile file at ${configFile}"
+}
+
 # Move to the root directory of the project before building the Docker image
 cd (Join-Path (Split-Path -Parent $MyInvocation.MyCommand.Path) "..")
 
