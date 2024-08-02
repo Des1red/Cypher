@@ -6,7 +6,7 @@ This repository contains a pen testing tool that can be run on Linux or using Do
 ## Branches
 - `linux`: Contains the Linux-compatible version of the tool.
 - `docker`: Contains the Docker version of the tool.
-  To switch between branches use the bash command:
+- To switch between branches use the bash command:
       ```bash
       git checkout "branch name"
       ```
