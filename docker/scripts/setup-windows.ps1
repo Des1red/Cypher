@@ -24,8 +24,8 @@ docker build -t cypher .
 # Alias command to be added
 $aliasCommand = @"
 function cypher {
-    param (
-        [string[]]$args
+     param (
+        [string[]]`$args
     )
     # Join the arguments into a single string separated by spaces
     $argsString = $args -join ' '
