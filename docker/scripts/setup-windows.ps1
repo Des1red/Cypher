@@ -24,13 +24,11 @@ docker build -t cypher .
 # Alias command to be added
 $aliasCommand = @"
 function cypher {
-     param (
-        [string[]]`$args
-    )
-    # Join the arguments into a single string separated by spaces
-    `$argsString = `$args -join ' '
-    # Pass the joined string to Docker
-    docker run -it --rm --network host --cap-add NET_ADMIN --cap-add NET_RAW cypher `$argsString
+    # Print the arguments for debugging purposes
+    Write-Host "Arguments received: $args"
+    
+    # Pass the arguments array directly to Docker
+    docker run -it --rm --network host --cap-add NET_ADMIN --cap-add NET_RAW cypher @args
 }
 "@
 
