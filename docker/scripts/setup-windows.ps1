@@ -22,14 +22,19 @@ cd (Join-Path (Split-Path -Parent $MyInvocation.MyCommand.Path) "..")
 docker build -t cypher .
 
 # Alias command to be added
-$aliasCommand = "function cypher { docker run -it --rm --network host --cap-add NET_ADMIN --cap-add NET_RAW cypher }"
+$aliasCommand = @"
+function cypher {
+    param([String[]]$args)
+    docker run -it --rm --network host --cap-add NET_ADMIN --cap-add NET_RAW cypher @args
+}
+"@
 
 # Check if the alias already exists in the configuration file to avoid duplication
-if (-not (Select-String -Path $configFile -Pattern "cypher")) {
+if (-not (Select-String -Path $configFile -Pattern "function cypher")) {
     Add-Content -Path $configFile -Value $aliasCommand
     . $configFile
     Write-Host "Alias added to ${configFile}:"
-    Get-Content $configFile | Select-String -Pattern "cypher"
+    Get-Content $configFile | Select-String -Pattern "function cypher"
 } else {
     Write-Host "Alias cypher already exists in ${configFile}"
 }
