@@ -25,7 +25,7 @@ docker build -t cypher .
 $aliasCommand = @"
 function cypher {
     param(
-        [string[]]\$args
+        [string[]]$args
     )
     docker run -it --rm --network host --cap-add NET_ADMIN --cap-add NET_RAW cypher @args
 }
