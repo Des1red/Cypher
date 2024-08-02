@@ -10,12 +10,6 @@ This repository contains a pen testing tool that can be run on Linux or using Do
   ```bash
   git checkout "branch name"
   ```
-## Using the Docker Version
-
-1. Switch to the Docker branch:
-    ```bash
-    git checkout docker
-    ```
 ## Prerequisites
 Ensure Docker is installed on your system. Follow the instructions for your operating system below.
 
@@ -86,6 +80,12 @@ Ensure Docker is installed on your system. Follow the instructions for your oper
 
 ### Setup Instructions
 
+## Using the Docker Version
+
+1. Switch to the Docker branch:
+    ```bash
+    git checkout docker
+    ```
 #### Build the Docker Image
 
 After ensuring Docker is installed, follow these steps to build the Docker image:
